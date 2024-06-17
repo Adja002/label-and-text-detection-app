@@ -1,0 +1,32 @@
+{
+  "Resources": {
+     "MyQueue": {
+       "Type": "AWS::SQS::Queue", 
+       "Properties": {
+         "QueueName": "my-queue-s2110852" 
+       }
+     },
+     "MyTable": {
+       "Type": "AWS::DynamoDB::Table",
+       "Properties": {
+         "TableName": "my-table1-s2110852",
+         "AttributeDefinitions": [
+           {
+             "AttributeName": "id", 
+             "AttributeType": "S" 
+           }
+         ],
+         "KeySchema": [
+           {
+             "AttributeName": "id", 
+             "KeyType": "HASH" 
+           }
+         ],
+         "ProvisionedThroughput": {
+           "ReadCapacityUnits": 5, 
+           "WriteCapacityUnits": 5 
+       }
+     }
+  }
+ }
+ 
